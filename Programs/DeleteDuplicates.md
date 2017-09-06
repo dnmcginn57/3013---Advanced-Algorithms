@@ -1,3 +1,4 @@
+```cpp
 //*******************************************************************
 //		Project #0: Removing Duplicate Elements From Arrays
 //		Name: David McGinn						
@@ -139,4 +140,4 @@ int * RemDups(int A[], int size, int &newsize)
 
 }
 
-
+```
