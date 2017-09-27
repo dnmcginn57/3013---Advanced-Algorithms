@@ -1,4 +1,16 @@
 ```CPP
+//*****************************************************************************
+//			Project #1 SLList
+//			Name: David McGinn
+//			Advanced Algorithms Date: 09/27/2017
+//*****************************************************************************
+//	This program creates a linked list class that would not be
+//	out of place in the standard template library.
+//	this program consists of 2 files
+//		1.) SLList.h
+//		2.) SLList.cpp
+//	for class this project was run using a specific main function
+//*****************************************************************************
 #pragma once
 #include "SLList.h"
 #include <iostream>
