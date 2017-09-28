@@ -14,6 +14,7 @@
 #include "SLList.h"
 #include <iostream>
 #include<algorithm>
+
 using namespace std;
 
 
@@ -27,8 +28,8 @@ using namespace std;
 SLList::SLList()
 {
 	_HeaderPtr = new Node(-999);
-	_LastNodePtr = new Node(-999);
-	_HeaderPtr->_next = _LastNodePtr;
+	_LastNodePtr = _HeaderPtr;
+	_HeaderPtr->_next = new Node(-999);
 	_size = 0;
 }
 
@@ -41,8 +42,8 @@ SLList::SLList()
 SLList::SLList(const SLList& source)
 {
 	_HeaderPtr = new Node(-999);
-	_LastNodePtr = new Node(-999);
-	_HeaderPtr->_next = _LastNodePtr;
+	_LastNodePtr = _HeaderPtr;
+	_HeaderPtr->_next = new Node(-999);
 	_size = 0;
 
 	Node* tmp = source._HeaderPtr->_next;
@@ -62,17 +63,9 @@ SLList::SLList(const SLList& source)
 //*****************************************************************************
 void SLList::push_back(int i)
 {
-	if (empty())
-	{
-		_LastNodePtr->_data = i;
-		_LastNodePtr->_next = new Node(-999);
-	}
-	else
-	{
-		_LastNodePtr = _LastNodePtr->_next;
-		_LastNodePtr->_data = i;
-		_LastNodePtr->_next = new Node(-999);
-	}
+	_LastNodePtr = _LastNodePtr->_next;
+	_LastNodePtr->_data = i;
+	_LastNodePtr->_next = new Node(-999);
 	_size++;
 }
 
@@ -125,7 +118,7 @@ void SLList:: push_front(int i)
 {
 	if (empty())
 	{
-		_HeaderPtr->_next = new Node(i, _LastNodePtr);
+		_HeaderPtr->_next = new Node(i, _LastNodePtr ->_next);
 		_LastNodePtr = _HeaderPtr->_next;
 	}
 	else
@@ -156,9 +149,6 @@ void SLList::pop_front()
 		_HeaderPtr->_data = -999;
 		_size--;
 	}
-	//if the last node is popped _LastNodePtr is moved back to its own Node
-	if (_HeaderPtr == _LastNodePtr)
-		_LastNodePtr = _LastNodePtr->_next;
 }
 
 //*****************************************************************************
