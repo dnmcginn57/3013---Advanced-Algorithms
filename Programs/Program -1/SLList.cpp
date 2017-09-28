@@ -1,4 +1,4 @@
-```cpp
+
 //*****************************************************************************
 //			Project #1 SLList
 //			Name: David McGinn
@@ -230,4 +230,4 @@ SLList::~SLList()
 
 	_HeaderPtr = _LastNodePtr = tmp = nullptr;
 }
-```
+
