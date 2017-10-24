@@ -7,6 +7,8 @@
 //	This program implements a BST with a vector containing the values of all
 //	nodes in the tree to allow for random deletion. The effects of deletion
 //	on the IPL of the BST are analyzed by main()
+//	
+//	Program includes (3)files: BST.h, BST.cpp, Main.cpp
 //*****************************************************************************
 
 #include<iostream>
